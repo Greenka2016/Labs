@@ -3,23 +3,23 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_ALL, "Rus");
+
 	int a[100];
 	int n;
-	cout << "Äëèíà ìàññèâà: ";
+	cout << "Ð”Ð»Ð¸Ð½Ð° Ð¼Ð°ÑÑÐ¸Ð²Ð°: ";
 	cin >> n;
 	for (int i = 0; i <= n; i++)
 	{
 		a[i] = rand() % 10;
 	}
 	cout << endl;
-	cout << "Ìàññèâ: ";
+	cout << "ÐœÐ°ÑÑÐ¸Ð²: ";
 	for (int i = 0; i < n; i++)
 	{
 		cout << a[i] << ' ';
 	}
-	cout << endl << "Óäàëåíèå ýëåìåíòîâ ñ çàäàííûì çíà÷åíèåì:" << endl;
-	cout << "Ââåäèòå çíà÷åíèå: ";
+	cout << endl << "Ð£Ð´Ð°Ð»ÐµÐ½Ð¸Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ñ Ð·Ð°Ð´Ð°Ð½Ð½Ñ‹Ð¼ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÐµÐ¼:" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: ";
 	int t;
 	int k =0;
 	cin >> t;
