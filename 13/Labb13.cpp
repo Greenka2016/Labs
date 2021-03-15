@@ -42,7 +42,7 @@ void variants(int a)
 	{
 		pole();
 
-		cout << "Âàðèàíò ðåøåíèÿ: " << ++numbchoice << endl;
+		cout << "Ð’Ð°Ñ€Ð¸Ð°Ð½Ñ‚ Ñ€ÐµÑˆÐµÐ½Ð¸Ñ: " << ++numbchoice << endl;
 	}
 	for (int i = 0; i < 8; i++)
 	{
