@@ -2,6 +2,7 @@
 #include <ctime>
 using namespace std;
 
+
 struct List
 {
 	char data;
@@ -11,12 +12,12 @@ struct List
 List* make(int size)
 {
     if (size == 0){
-        cout << "Ñïèñîê íå ìîæåò áûòü ñîçäàí" << endl;
+        cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã±Ã®Ã§Ã¤Ã Ã­" << endl;
         return 0;
     }
     List* first, *p;
     first = NULL;
-    cout << "Ââåäèòå 1 ýëåìåíò:";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 1 Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²:";
     p = new List;
     cin >> p->data;
     first = p;
@@ -24,7 +25,7 @@ List* make(int size)
         List* h = new List;
         p->next = h;
         p = p -> next;
-        cout << "Ââåäèòå " << i << "ýëåìåíò: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ " << i << "Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: ";
         cin >> p->data;
         p-> next = NULL;
     }
@@ -33,7 +34,7 @@ List* make(int size)
 
 void print(List* first){
     if (first == NULL){
-        cout << "Ñïèñîê ïóñòîé" << endl;
+        cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã¯Ã³Ã±Ã²Ã®Ã©" << endl;
     }else{
     List* p = first;
     while (p != NULL){
@@ -57,16 +58,16 @@ void del(List* first)
 void add(List* &first,int size) {
     if (first == NULL)
     {
-        cout << "Ñïèñîê ïóñò" << endl;
+        cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã¯Ã³Ã±Ã²" << endl;
     }
     int k;
     int n;
     int l = 1;
-    cout << "Ââåäèòå êîëè÷åñòâî äîáàâëÿåìûõ ýëåìåíòîâ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¿Ã¥Ã¬Ã»Ãµ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢";
     cin >> k;
     List*p = first;
     for (int i = 1; i < k; i++){
-            cout << "Ââåäèòå " << l << " ýëåìåíò: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ " << l << " Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: ";
             List* h = new List;
             cin >> h->data;
             List* p = first;
@@ -95,11 +96,11 @@ void add(List* &first,int size) {
 int main(){
     setlocale(LC_ALL, "Rus");
     int size;
-    cout << "Ââåäèòå ðàçìåð ñïèñêà: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã° Ã±Ã¯Ã¨Ã±ÃªÃ : ";
     cin >> size;
 
     List* list = make(size);
-    cout << "Âàù ñïèñîê: ";
+    cout << "Ã‚Ã Ã¹ Ã±Ã¯Ã¨Ã±Ã®Ãª: ";
     print(list);
     add(list, size);
     print(list);
