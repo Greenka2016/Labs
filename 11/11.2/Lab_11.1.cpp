@@ -1,93 +1,133 @@
 #include <iostream>
-#include <ctime>
-using namespace std;
+#include <string>
 
+using namespace std;
 
 struct List
 {
-    int num;
-    char data;
-    List* next;
+	int data;
+	List* next;
+	List* prev;
 };
+
 
 List* make(int size)
 {
-    if (size == 0) {
-        cout << "Ñïèñîê íå ìîæåò áûòü ñîçäàí" << endl;
-        return 0;
-    }
-    List* first, * p;
-    first = NULL;
-    cout << "Ââåäèòå 0 ýëåìåíò: ";
-    p = new List;
-    cin >> p->data;
-    first = p;
-    for (int i = 1; i <= size-1; i++) {
-        List* h = new List;
-        p->next = h;
-        p = p->next;
-        cout << "Ââåäèòå " << i << " ýëåìåíò: ";
-        cin >> p->data;
-        p->next = NULL;
-    }
-    return first;
+	List* p = new List;
+	List* first = new List;
+	first = NULL;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ¿Ð¸ÑÐºÐ°: ";
+	cin >> p->data;
+	first = p;
+	p->next = NULL;
+	p->prev = NULL;
+
+	for (int i = 2; i <= size; i++)
+	{
+		List* r = new List;
+		List* u = p;
+		p->next = r;
+		p = p->next;
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ ÑÐ¿Ð¸ÑÐºÐ°: ";
+		cin >> p->data;
+		p->next = NULL;
+		p->prev = u;
+
+	}
+
+	return first;
 }
 
-void print(List* first) {
-    if (first == NULL) {
-        cout << "Ñïèñîê ïóñòîé" << endl;
-    }
-    else {
-        List* p = first;
-        while (p != NULL) {
-            cout << p->data << " ";
-            p = p->next;
-        }
-        cout << endl;
-    }
-}
-
-void del(List* first)
+void del(List* first, int size)
 {
-    while (first)
-    {
-        List* tmp = first;
-        first = first->next;
-        delete tmp;
-    }
+	List* p = first;
+	List* o = first;
+	int h = 0;
+	int d = 0;
+
+
+	for (int i = 0; i < size; i++)
+	{
+
+		if ((first->data % 2) == 0)
+		{
+			d = first->data;
+			first = first->next;
+
+		}
+		else
+		{
+			first = first->next;
+		}
+
+	}
+	first = p;
+	for (int i = 0; i < size; i++)
+	{
+		if (first->data == d)
+		{
+			if (first->next == NULL) {
+				p = first;
+				p->prev->next = first->next;
+				delete p;
+			}
+			else
+			{
+				p = first;
+				p->prev->next = first->next;
+				p->next->prev = first->prev;
+				delete p;
+			}
+		}
+		else
+		{
+			first = first->next;
+		}
+	}
 }
 
-void add(List* first)
+void print(List* first)
 {
-    List* p = first;
-    List* n = new List;
-    while (p != 0)
-    {
-        if (p->num % 2 != 0) {
-            List* o = new List;
-            n = p->next;
-            p->next = o;
-            p = p->next;
-            cout << "Ââåäèòå íîâûé ýëåìåíò: ";
-            cin >> p->data;
-            p->next = n;
-        }
-        p = p->next;
-    }
+	if (first == NULL)
+	{
+		cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿ÑƒÑÑ‚";
+		cout << endl;
+	}
+	else {
+		List* p = first;
+		while (p != 0)
+		{
+			cout << p->data << " ";
+			p = p->next;
+		}
+		cout << endl;
+	}
+	cout << endl;
 }
 
 
-int main() {
-    setlocale(LC_ALL, "Rus");
-    int size;
-    cout << "Ââåäèòå ðàçìåð ñïèñêà: ";
-    cin >> size;
-    List* head;
 
-    List* list = make(size);
-    cout << "Âàø ñïèñîê: ";
-    print(list);
-    add(list);
-    print(list);
-    return 0;
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	int size = -1, n = 0;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² ÑÐ¿Ð¸ÑÐºÐ°: ";
+	while (size <= 0)
+	{
+		cin >> size;
+
+		if (size <= 0)
+			cout << "ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ðµ Ð²Ð²Ð¾Ð´Ð¸Ð¼Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ";
+	}
+
+	List* first = make(size);
+	cout << "Ð’Ð°Ñˆ ÑÐ¿Ð¸ÑÐ¾Ðº: ";
+	print(first);
+
+	del(first, size);
+	cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¿Ð¾ÑÐ»Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: ";
+	print(first);
+
+	delete first;
+	return(0);
 }
