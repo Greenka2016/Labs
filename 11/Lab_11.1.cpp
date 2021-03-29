@@ -13,12 +13,12 @@ struct List
 List* make(int size)
 {
     if (size == 0) {
-        cout << "Ñïèñîê íå ìîæåò áûòü ñîçäàí" << endl;
+        cout << "Список не может быть создан" << endl;
         return 0;
     }
     List* first, * p;
     first = NULL;
-    cout << "Ââåäèòå 0 ýëåìåíò: ";
+    cout << "Введите 0 элемент: ";
     p = new List;
     cin >> p->data;
     first = p;
@@ -26,7 +26,7 @@ List* make(int size)
         List* h = new List;
         p->next = h;
         p = p->next;
-        cout << "Ââåäèòå " << i << " ýëåìåíò: ";
+        cout << "Введите " << i << " элемент: ";
         cin >> p->data;
         p->next = NULL;
     }
@@ -35,7 +35,7 @@ List* make(int size)
 
 void print(List* first) {
     if (first == NULL) {
-        cout << "Ñïèñîê ïóñòîé" << endl;
+        cout << "Список пустой" << endl;
     }
     else {
         List* p = first;
@@ -68,7 +68,7 @@ void add(List* first)
             n = p->next;
             p->next = o;
             p = p->next;
-            cout << "Ââåäèòå íîâûé ýëåìåíò: ";
+            cout << "Введите новый элемент: ";
             cin >> p->data;
             p->next = n;
         }
@@ -79,12 +79,12 @@ void add(List* first)
 int main() {
     setlocale(LC_ALL, "Rus");
     int size;
-    cout << "Ââåäèòå ðàçìåð ñïèñêà: ";
+    cout << "Введите размер списка: ";
     cin >> size;
     List* head;
 
     List* list = make(size);
-    cout << "Âàø ñïèñîê: ";
+    cout << "Ваш список: ";
     print(list);
     add(list);
     print(list);
