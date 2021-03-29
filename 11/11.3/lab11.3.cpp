@@ -17,7 +17,7 @@ Stack* make_stack(int n)
 	Stack* top, * p;
 	top = NULL;
 	p = new Stack;
-	cout << "Ââåäèòå ïåðâûé ýëåìåíò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿ÐµÑ€Ð²Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 	cin >> x;
 	p->data = x;
 	p->prev = NULL;
@@ -25,7 +25,7 @@ Stack* make_stack(int n)
 	for (int i = 2; i <= n; i++)
 	{
 		Stack* h = new Stack;
-		cout << "Ââåäèòå " << i << " ýëåìåíò: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ " << i << " ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 		cin >> x;
 		h->data = x;
 		h->prev = top;
@@ -38,7 +38,7 @@ void print(Stack* top)
 {
 	if (top == NULL)
 	{
-		cout << "Ñòåê - ïóñòîé" << endl;
+		cout << "Ð¡Ñ‚ÐµÐº - Ð¿ÑƒÑÑ‚Ð¾Ð¹" << endl;
 	}
 	else {
 		Stack* p = top;
@@ -55,13 +55,13 @@ void add(Stack*& first, int n)
 {
 	Stack* p = first;
 	Stack* l = new Stack;
-	cout << "Ââåäèòå äîáàâëÿåìûé ýëåìåíò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 	cin >> l->data;
 	l->prev = p;
 	first = l;
 	while (p->prev != NULL) {
 		Stack* h = new Stack;
-		cout << "Ââåäèòå äîáàâëÿåìûé ýëåìåíò: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼Ñ‹Ð¹ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚: ";
 		cin >> h->data;
 		h->prev = p->prev;
 		p->prev = h;
@@ -78,15 +78,15 @@ void add(Stack*& first, int n)
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ â ñòåêå: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² ÑÑ‚ÐµÐºÐµ: ";
 	int n;
 	cin >> n;
-	cout << "Ââåäèòå ýëåìåíòû ñòåêà: " << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ ÑÑ‚ÐµÐºÐ°: " << endl;
 	Stack* s = make_stack(n);
-	cout << "Ñòåê: ";
+	cout << "Ð¡Ñ‚ÐµÐº: ";
 	print(s);
 	add(s, n);
-	cout << "Ñòåê ïîñëå äîáàâëåíèÿ: ";
+	cout << "Ð¡Ñ‚ÐµÐº Ð¿Ð¾ÑÐ»Ðµ Ð´Ð¾Ð±Ð°Ð²Ð»ÐµÐ½Ð¸Ñ: ";
 	print(s);
 	return 0;
 }
