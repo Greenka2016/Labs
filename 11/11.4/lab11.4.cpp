@@ -11,7 +11,7 @@ Queue* make_Queue(int n, Queue*& first, Queue*& last)
 	if (n == 0) return NULL;
 	Queue* p = new Queue;
 	int a;
-	cout << "Ââåäèòå ýëåìåíò î÷åðåäè: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸: ";
 	cin >> a;
 	p->data = a;
 	p->next = NULL;
@@ -20,7 +20,7 @@ Queue* make_Queue(int n, Queue*& first, Queue*& last)
 	for (int i = 2; i <= n; i++)
 	{
 		Queue* h = new Queue;
-		cout << "Ââåäèòå ýëåìåíò î÷åðåäè: ";
+		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸: ";
 		cin >> a;
 		h->data = a;
 		h->next = p;
@@ -88,7 +88,7 @@ int pop(Queue*& first, Queue*& last)
 int main()
 {
 	setlocale(LC_ALL, "Rus");
-	cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ â î÷åðåäè: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð² Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸: ";
 	int n;
 	cin >> n;
 	int k;
@@ -115,7 +115,7 @@ int main()
 		}
 	}
 
-	cout << "Î÷åðåäü ïîñëå óäàëåíèÿ: ";
+	cout << "ÐžÑ‡ÐµÑ€ÐµÐ´ÑŒ Ð¿Ð¾ÑÐ»Ðµ ÑƒÐ´Ð°Ð»ÐµÐ½Ð¸Ñ: ";
 	print_Queue(last);
 	return 0;
 }
