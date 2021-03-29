@@ -13,12 +13,12 @@ struct List
 List* make(int size)
 {
     if (size == 0) {
-        cout << "Ñïèñîê íå ìîæåò áûòü ñîçäàí" << endl;
+        cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã­Ã¥ Ã¬Ã®Ã¦Ã¥Ã² Ã¡Ã»Ã²Ã¼ Ã±Ã®Ã§Ã¤Ã Ã­" << endl;
         return 0;
     }
     List* first, * p;
     first = NULL;
-    cout << "Ââåäèòå 0 ýëåìåíò: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ 0 Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: ";
     p = new List;
     cin >> p->data;
     first = p;
@@ -26,7 +26,7 @@ List* make(int size)
         List* h = new List;
         p->next = h;
         p = p->next;
-        cout << "Ââåäèòå " << i << " ýëåìåíò: ";
+        cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ " << i << " Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: ";
         cin >> p->data;
         p->next = NULL;
     }
@@ -35,7 +35,7 @@ List* make(int size)
 
 void print(List* first) {
     if (first == NULL) {
-        cout << "Ñïèñîê ïóñòîé" << endl;
+        cout << "Ã‘Ã¯Ã¨Ã±Ã®Ãª Ã¯Ã³Ã±Ã²Ã®Ã©" << endl;
     }
     else {
         List* p = first;
@@ -68,7 +68,7 @@ void add(List* first)
             n = p->next;
             p->next = o;
             p = p->next;
-            cout << "Ââåäèòå íîâûé ýëåìåíò: ";
+            cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¢Ã»Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²: ";
             cin >> p->data;
             p->next = n;
         }
@@ -76,16 +76,15 @@ void add(List* first)
     }
 }
 
-
 int main() {
     setlocale(LC_ALL, "Rus");
     int size;
-    cout << "Ââåäèòå ðàçìåð ñïèñêà: ";
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã° Ã±Ã¯Ã¨Ã±ÃªÃ : ";
     cin >> size;
     List* head;
 
     List* list = make(size);
-    cout << "Âàø ñïèñîê: ";
+    cout << "Ã‚Ã Ã¸ Ã±Ã¯Ã¨Ã±Ã®Ãª: ";
     print(list);
     add(list);
     print(list);
