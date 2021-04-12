@@ -74,7 +74,7 @@ int main()
 {
 	setlocale(LC_ALL, "Rus");
 	int n;
-	cout << "Введите количество объекты: ";
+	cout << "Введите количество объектов: ";
 	cin >> n;
 	cout << "Введите объекты: " << endl;
 	cin.ignore();
