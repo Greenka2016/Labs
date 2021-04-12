@@ -3,7 +3,7 @@
 using namespace std;
 struct info
 {
-    string fio;
+    	string fio;
 	string phone;
 	string address;
 };
